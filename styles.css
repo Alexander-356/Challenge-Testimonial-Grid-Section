@@ -1,0 +1,145 @@
+/*
+Colores
+  purple: hsl(263, 55%, 52%)
+  grey: hsl(217, 19%, 35%)
+  dark-blue: hsl(219, 29%, 14%)
+
+Fuente de la página
+  https://fonts.google.com/specimen/Barlow+Semi+Condensed
+  Estilos 500 y 600
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 500;
+}
+
+/* vamos a dar estilo al grid container, le vamos a dar position relative, para posicionar todo lo que este dentro de él. */
+.grid-container{
+  position: relative;
+  width: 1400px;
+  /* le vamos a poner margen arriba de 3 rem y auto a los lados, le podríamos poner 0 abajo, pero como no hya mas contenido lo podemos dejar sin poner el cero */
+  margin: 3em auto;
+}
+
+/* ahora vamos a las tarjetas, vamos a darle display inline block para que se coloquen unas al lado de las otras */
+.card{
+  position: relative;
+  display: inline-block;
+  height:400px;
+  /* el display inline block todavia no afecta porque las tarjetas no tiene n acnho establecido. PArta el ancho vamos a usar los modificadores */
+  /* para que las fotos quedan alieneadas todas arriba le vamos a dar un vertical-align top a la card */
+  vertical-align: top;
+  /* ahora le vamos a dar mas espacios con margin para separalas entre si y padding para darle espacio interior, también le vamos a dar un line height para que las líneas estén un  poco mas separadas  y un border radius */
+  margin-right: 1.5em;
+  padding: 2em;
+  line-height: 1.5;
+  border-radius: 1em;
+}
+
+/* vamos a posicionar las comillas, con position absolute. Para posicionarlas en el sitio a la derecha, debemos posicionarlas respecto a su contenedor, que es .card=>Por tanto, le vamos a dar a .card position absolute, y luego le damos  a las comillas la pposicion de arriba y de la derecha */
+.card__quotes{
+  position: absolute;
+  top: 4em;
+  right: 10em;
+  
+}
+
+/* para que las comillas queden por debajo, vamos a posicionar el titulo con relativo y eso es suficiente apra que queden por debajo */
+
+.card__title{
+  position: relative;
+}
+/* el texto de las tarjetas tienen una opacidad del 70% */
+
+.card__text{
+  opacity: .7;
+}
+
+.card--first{
+  width: 650px
+
+}
+.card--second{
+  width: 325px;
+}
+.card--third{
+  width: 275px;
+  /* de momento la tercera tarjeta no entra en pantalla. Vamos a quitarle el margin right, a cero */
+  margin-right: 0;
+  /* le damos su altura de 825px */
+  height: 850px;
+}
+
+/* vamos a posicionar las tarjetas 4 y 5, de entrada les damos a ambas position absolute*/
+
+.card--fourth,
+.card--fith{
+  position: absolute;
+  top: 450px;
+}
+
+/* ahora posicionamos cada una */
+.card--fourth{
+top: 450px;
+left: 0;
+width:300px;
+}
+
+.card--fith{
+left:355px;
+width: 650px;
+}
+/* ahora vamos a darle color a la fuente, como todas son blancas, las agrupamos */
+.card--purple, 
+.card--grey, 
+.card--dark-blue{
+  color: aliceblue;
+}
+/* ahora vamos a darle color a cada una de las tarjetas*/
+.card--purple{
+  background-color: hsl(263, 55%, 52%);
+}
+.card--grey{
+  background-color: hsl(217, 19%, 35%);
+}
+.card--dark-blue{
+  background-color: hsl(219, 29%, 14%);
+}
+.card--white{
+  background-color: aliceblue;
+  color: hsl(219, 29%, 14%);
+}
+
+/* ahora vamos a trabajar la imagen y la informacion de los usuarios */
+
+.user{
+  width: 250px;
+}
+ /* la foto circular es con border radius 50% y ancho de 25% para que no ocupe mucho espacio */
+
+ .user__image{
+  border-radius: 50%;
+  width: 25%;
+ }
+
+ /* para colocar la informacion del usuario, le vamos a dar display inline block  para que queden al lado de la imagen, y vertical align middle */
+
+ .user__image,
+ .user__info{
+  display: inline-block;
+  vertical-align: middle;
+ }
+
+ /* para que queden mas juntos el nombre y la categoría, con margin; y le damos una opacdidad */
+
+ .user__name,
+ .user__category{
+  margin: 0.5em 1em;
+  opacity: .5;
+ }
